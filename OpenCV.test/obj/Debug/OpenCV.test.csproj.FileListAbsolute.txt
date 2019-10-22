@@ -1,0 +1,13 @@
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\OpenCV.test.exe.config
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\OpenCV.test.exe
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\OpenCV.test.pdb
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\Emgu.CV.xml
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\Emgu.CV.UI.xml
+D:\API\EmguCV.Test\OpenCV.test\bin\Debug\Emgu.Util.xml
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.csprojAssemblyReference.cache
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.Form1.resources
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.Properties.Resources.resources
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.csproj.GenerateResource.cache
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.csproj.CopyComplete
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.exe
+D:\API\EmguCV.Test\OpenCV.test\obj\Debug\OpenCV.test.pdb
