@@ -29,6 +29,7 @@ namespace OpenCV.test
         int Count, NumLables, t;
         string name, names = null;
 
+        
         public Form1()
         {
             InitializeComponent();
@@ -54,12 +55,37 @@ namespace OpenCV.test
                 MessageBox.Show("Nothing in the Database");
             }
         }
+
         private void start_Click(object sender, EventArgs e)
         {
             camera = new Capture();
             camera.QueryFrame();
             Application.Idle += new EventHandler(FrameProcedure);
         }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            Count = Count + 1;
+            grayFace = camera.QueryGrayFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+            MCvAvgComp[][] DetectedFaces = grayFace.DetectHaarCascade(faceDetected, 1.2, 10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 30));
+            foreach (MCvAvgComp f in DetectedFaces[0])
+            {
+                TrainedFace = Frame.Copy(f.rect).Convert<Gray, byte>();
+                break;
+            }
+            TrainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+            trainigImages.Add(TrainedFace);
+            labels.Add(textName.Text);
+            File.WriteAllText(Application.StartupPath + "/Faces/Face.txt", trainigImages.ToArray().Length.ToString() + ",");
+            for (int i = 0; i < trainigImages.ToArray().Length + 1; i++)
+            {
+                trainigImages.ToArray()[i - 1].Save(Application.StartupPath + "/Faces/Face.txt" + i + ".bmp");
+                File.AppendAllText(Application.StartupPath + "/Faces/Face.txt", labels.ToArray()[i - 1] + ",");
+
+            }
+            MessageBox.Show(textName.Text + "Added Susscessfully");
+        }
+
 
         private void FrameProcedure(object sender, EventArgs e)
         {
